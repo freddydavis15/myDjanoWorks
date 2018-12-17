@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django test</title>
+    <link rel="stylesheet" href="{% static "master.css" %}">
+  </head>
+  <body>
+    <h1>Employee Details</h1>
+    <div class="djangotwo">
+    {% if employee_records %}
+      <table>
+        <tr>
+          <th>name</th>
+          <th>job</th>
+        </tr>
+
+          {% for emp in employee_records %}
+            <tr>
+              <td>{{ emp.user_name }} </td><td>{{ emp.job }} </td>
+            </tr>
+          {% endfor %}
+        {% else %}
+              <h3>NO RECORDS FOUND</h3>
+        {% endif %}
+
+      </table>
+    </div>
+  </body>
+</html>
